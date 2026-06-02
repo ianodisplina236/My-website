@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindLift - Mental Wellness Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🧠 MindLift</h1>
+    <p>Your Personal Mental Wellness Companion</p>
+
+    <button class="dark-btn" onclick="toggleDarkMode()">
+        🌙 Toggle Theme
+    </button>
+</header>
+
+<main>
+
+    <!-- Mood Tracker -->
+    <section class="card">
+        <h2>How are you feeling today?</h2>
+
+        <div class="moods">
+            <button onclick="saveMood('😊')">😊</button>
+            <button onclick="saveMood('😐')">😐</button>
+            <button onclick="saveMood('😔')">😔</button>
+            <button onclick="saveMood('😡')">😡</button>
+            <button onclick="saveMood('😰')">😰</button>
+        </div>
+
+        <p id="selectedMood">
+            Select a mood above
+        </p>
+    </section>
+
+    <!-- Analytics -->
+    <section class="card">
+        <h2>📊 Mood Analytics</h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+                <h3>Total Check-ins</h3>
+                <p id="totalCheckins">0</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Most Common Mood</h3>
+                <p id="commonMood">-</p>
+            </div>
+
+            <div class="stat-box">
+                <h3>Current Streak</h3>
+                <p id="streakCount">0 Days</p>
+            </div>
+
+        </div>
+
+        <h3>Recent Mood History</h3>
+        <div id="moodHistory"></div>
+    </section>
+
+    <!-- Affirmation -->
+    <section class="card">
+        <h2>✨ Daily Affirmation</h2>
+
+        <p id="affirmationText">
+            You are capable of handling today's challenges.
+        </p>
+    </section>
+
+    <!-- Calm Mode -->
+    <section class="card">
+        <h2>🧘 Calm Mode</h2>
+
+        <p>
+            Use this breathing exercise whenever you feel stressed.
+        </p>
+
+        <button onclick="startBreathing()">
+            Start Exercise
+        </button>
+
+        <h2 id="breathingText"></h2>
+    </section>
+
+    <!-- Journal -->
+    <section class="card">
+        <h2>📖 Journal</h2>
+
+        <textarea
+            id="journalEntry"
+            placeholder="Write about your day..."
+        ></textarea>
+
+        <button onclick="saveJournal()">
+            Save Entry
+        </button>
+
+        <div id="journalList"></div>
+    </section>
+
+    <!-- Resources -->
+    <section class="card">
+        <h2>🆘 Mental Health Resources</h2>
+
+        <ul class="resource-list">
+            <li>
+                <a href="https://www.who.int/health-topics/mental-health" target="_blank">
+                    World Health Organization
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.mentalhealth.org.uk" target="_blank">
+                    Mental Health Foundation
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.mind.org.uk" target="_blank">
+                    Mind UK
+                </a>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>
+        This website is for wellness tracking and educational purposes only.
+        It is not a substitute for professional medical advice,
+        diagnosis, or treatment.
+    </p>
+</footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
